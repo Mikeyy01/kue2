@@ -1,0 +1,216 @@
+.containerBody{
+    background: linear-gradient(56deg, rgb(85, 20, 72) -20%, rgb(0, 0, 0) 50%, rgb(85, 20, 72) 120%) no-repeat fixed;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.headerLogo{
+
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.47) 0%, rgb(220, 20, 122) 50%, rgb(142, 118, 157) 100%) 1 / 1 / 0 stretch;
+    margin: 0px;
+    border-bottom: 2px solid transparent;
+}
+
+h2{
+    position: relative;
+    left: 330px;
+    font-size: 3rem;
+    bottom: 100px;
+    color: white;
+}
+.todoBody{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+}
+.aBtn{
+    background-image: transparent;
+}
+
+
+.delete-button{
+    background: #E5696A;
+    /* overflow: hidden; */
+    width: 80px;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.accept-button {
+    background:  #80C67A;
+    width: 80px;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.dropDown {
+    display: flex;
+    justify-content: right;
+    align-self: start;
+    margin-top: 50px;
+}
+.dropDown h3 {
+color: white;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+
+
+option{
+    color: black;
+}
+
+select {
+    cursor: pointer;
+    font-size: 1em;
+    width: 6.5em;
+    height: 2em;
+    background: linear-gradient(rgb(29, 29, 29), rgb(29, 29, 29)) padding-box padding-box, linear-gradient(135deg, rgb(224, 132, 166) 0%, rgb(99, 77, 160) 42%, rgb(85, 20, 72) 100%) border-box border-box;
+    border-radius: 100em;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    color: white;
+
+}
+/* items styles */
+.todo{
+    color: white;
+    box-shadow: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 35px;
+    font-size: 1em;
+    font-family: Proxima;
+    font-weight: lighter;
+    width: 800px;
+    height: 10px;
+    background: linear-gradient(rgb(29, 29, 29), rgb(29, 29, 29)) padding-box padding-box, linear-gradient(135deg, rgb(220, 20, 122) 50%, rgb(142, 118, 157) 100%, rgba(255, 255, 255, 0.47) 0%) border-box border-box;
+    border-radius: 100em;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+}
+
+.albumCover {
+    background: none;
+    margin: 5px;
+    justify-content: space-between
+}
+
+.timeStamp{
+    background: none;
+    color: white;
+    margin: 10px;
+
+}
+
+.songName{
+    background: none;
+    color: white;
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+.artistName {
+    background: none;
+    color: white;
+    margin: 10px;
+    font-size: 1.1em;
+}
+
+
+h1{
+    color: white;
+    padding-top: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+@media screen and (max-width: 845px) {
+
+    .todoBody .todo {
+        transform: scale(0.9);
+    }
+
+    .todoBody .dropDown {
+        transform: scale(0.9);
+    }
+}
+    @media screen and (max-width: 755px) {
+
+        .todoBody .todo {
+            transform: scale(0.8);
+        }
+
+        .todoBody .dropDown {
+            transform: scale(0.8);
+        }
+    }
+@media screen and (max-width: 670px) {
+
+    .todoBody .todo {
+        transform: scale(0.7);
+    }
+
+    .todoBody .dropDown {
+        transform: scale(0.7);
+    }
+}
+
+
+@media screen and (max-width: 590px) {
+
+    .todoBody .todo {
+        transform: scale(0.6);
+    }
+
+    .todoBody .dropDown {
+        transform: scale(0.6);
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .todoBody .todo {
+        transform: scale(0.6);
+    }
+    .todoBody .dropDown {
+        transform: scale(0.55);
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .todoBody .todo {
+        transform: scale(0.55);
+    }
+    .todoBody .dropDown {
+        transform: scale(0.55);
+    }
+
+}
+
+@media screen and (max-width: 440px) {
+
+    .todoBody .todo {
+        transform: scale(0.45);
+    }
+    .todoBody .dropDown {
+        transform: scale(0.45);
+    }
+
+}
+
+
+
+

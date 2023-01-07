@@ -1,0 +1,206 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+@font-face {
+    font-family: ProximaNova;
+    src: url(../fonts/ProximaNova.otf);
+}
+
+@font-face {
+    font-family: Proxima;
+    src: url(../fonts/ProximaNova-Light.otf);
+    font-weight: lighter;
+    text-decoration: none !important;
+}
+
+@font-face {
+    font-family: Proxima Bold;
+    src: url(../fonts/ProximaNova-Bold.otf);
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+/*position absolute top 50 % left 50% cen*/
+
+
+* {
+    font-family: 'ProximaNova', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.blob {
+    background: linear-gradient(56deg, #551448 0%, #000000 50%, #551448 100%);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+}
+
+
+.blob .logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.blob .logo img {
+    width: 50%;
+    margin-top: 15%;
+    max-width: 250px;
+    height: auto;
+}
+
+.blob .X {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12%;
+    width: 6%;
+    max-width: 100%;
+    margin-top: 5%;
+    height: auto;
+}
+
+.blob .ClubLine {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.blob .Club {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    margin-top: 5%;
+}
+
+
+
+.blob .line2 {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    height: 4px;
+    max-height: auto;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    margin-right: 200px;
+    margin-left: 0px;
+    max-width: 2300px;
+    background: rgb(103, 168, 175);
+    background: linear-gradient(90deg, rgba(103, 168, 175, 1) 0%, rgba(234, 2, 120, 1) 50%, rgba(97, 226, 186, 1) 80%);
+}
+
+.blob .text1 {
+    font-size: 4vw;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(to right, rgba(103, 168, 175, 1) 0%, rgba(234, 2, 120, 1)60%, rgba(97, 226, 186, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animation 300s linear infinite;
+    animation-delay: calc(.1s * var(--i));
+
+}
+
+@keyframes animation {
+    to {
+        background-position: 4500vh;
+
+    }
+}
+
+.blob .text2 {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    color: white;
+}
+
+
+.blob .search-button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.blob button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: Proxima;
+    font-weight: lighter;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, #E084A6 0%, #634DA0 42%, #551448 100%);
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+    width: 100%;
+    height: 150px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: white;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.blob button img {
+    margin-top: 13%;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+
+.blob .search-button:hover {}
+
+@media only screen and (min-width: 456px) {
+    /* styles for screens with a maximum width of 600px go here */
+    .blob .section1 {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+}
+
+@media only screen and (min-width: 990px) {
+    /* styles for screens with a maximum width of 600px go here */
+    .blob .section1 {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    /* styles for screens with a maximum width of 600px go here */
+    .blob .section1 {
+        width: 30%;
+        margin: 0 auto;
+    }
+
+}
+@media only screen and (min-width: 1500px) {
+    /* styles for screens with a maximum width of 600px go here */
+    .blob .section1 {
+        width: 20%;
+        margin: 0 auto;
+    }
+
+}
+

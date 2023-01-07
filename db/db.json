@@ -1,0 +1,15 @@
+{
+  "todos": [
+    {
+      "id": 4,
+      "todo": {
+        "artist": "TALK",
+        "track": "Run Away to Mars",
+        "coverArtURL": "https://i.scdn.co/image/ab67616d00004851c83a09ef90c0c65e528cc651"
+      },
+      "completed": true,
+      "status": "Approved",
+      "timestamp": "1/7/2023 12:51:40 PM"
+    }
+  ]
+}
