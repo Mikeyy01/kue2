@@ -99,12 +99,10 @@ function Confirm() {
     //display info from URL query
     const TrackConfirm = ({ artist, track }) => {
         return (
-            <div className="info">
-                <ul className="info">
-                    <li className="artist">Artist: {artist}</li>
-                    <li className="name">Track: {track}</li>
-                </ul>
-            </div>
+            <ul className="info">
+                <li className="name">{track}</li>
+                <li className="artist">{artist}</li>
+            </ul>
         );
     };
 
@@ -113,74 +111,75 @@ function Confirm() {
     }
 
     return (
-        <section className="payment">
-            <div className="container">
-                <header>
-                    <a onClick={returnHome} href="/">
-                        <img src={kuelogo} alt="logo" />
-                    </a>
-                </header>
-                <div className="line" />
-
-                <div className="confirmation">
-                    <p className="confirm">Confirm Request</p>
-
-                    <div className="track-row">
-                        <img id="searchedTrackImg" />
-                        <div className="track-info">
-                            <ul className="info">
-                                <TrackConfirm artist={artist} track={track} />
-                            </ul>
+        <div className='paymentContainer'>
+            <section className="payment">
+                <div className="container">
+                    <header>
+                        <a onClick={returnHome} href="/">
+                            <img src={kuelogo} alt="logo" />
+                        </a>
+                    </header>
+                    
+                    <div className="confirmation">
+                        <p className="confirm">Confirm Request</p>
+                        
+                        <div className="track-row">
+                            <img id="searchedTrackImg" />
+                            <div className="track-info">
+                                <TrackConfirm track={track} artist={artist}/>
+                            </div>
                         </div>
-                    </div>
-                    <h2>€ 10</h2>
-
-                    <form onSubmit={handleNewTodo}>
-                        <div className="dropdown">
-                            <div className="dropdownField" onClick={toggleSelectList}>
-                                {selectedOption && (
-                                    <img src={selectedOption.img} alt={selectedOption.label} className="selected_icon" />)}
-                                <div id="selectText" style={{ paddingTop: '12px' }} className={`${selectedOption ? 'selected' : ''} choose-bank-text`}>
-                                    {selectedOption ? selectedOption.label : 'Choose your bank'}
+                        <h2 className='confirm__price'>€ 10,00</h2>
+                        
+                        <form onSubmit={handleNewTodo}>
+                            <div className="dropdown">
+                                <div className="dropdownField" onClick={toggleSelectList}>
+                                    <div className='dropField'>
+                                        {selectedOption && (
+                                            <img src={selectedOption.img} alt={selectedOption.label} className="selected_icon" />)}
+                                        
+                                        <p id="selectText" className={`${selectedOption ? 'selected' : ''} choose-bank-text`}>
+                                            {selectedOption ? selectedOption.label : 'Choose your bank'}
+                                        </p>
+                                        <img src={arrow1} id="arrow" className={`${selectListVisible ? '' : 'rotate'}`}/>
+                                    </div>
                                 </div>
-                                <img src={arrow1} id="arrow" />
+
+                                <ul
+                                    id="select"
+                                    className={`${selectListVisible ? '' : 'hide'}`}
+                                    onChange={(event) => {
+                                        setSelectedOption(event.target.value);
+                                        setSelectListVisible(false);
+                                    }}
+                                >
+                                    {options.map((option) => (
+                                        <li
+                                            key={option.label}
+                                            className="options"
+                                            value={option}
+                                            onClick={() => handleOptionClick(option)}
+                                        >
+                                            <img src={option.img} alt={option.label} />
+                                            <p>{option.label}</p>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
 
-                            <ul
-                                id="select"
-                                className={`${selectListVisible ? '' : 'hide'}`}
-                                onChange={(event) => {
-                                    setSelectedOption(event.target.value);
-                                    setSelectListVisible(false);
-                                }}
-                            >
-                                {options.map((option) => (
-                                    <li
-                                        key={option.label}
-                                        className="options"
-                                        value={option}
-                                        onClick={() => handleOptionClick(option)}
-                                    >
-                                        <img src={option.img} alt={option.label} />
-                                        <p>{option.label}</p>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        <input
-                            type="submit"
-                            onSubmit={handleNewTodo}
-                            value="Confirm and Pay"
-                            id="submit"
-                            style={{ display: submitVisible ? 'block' : 'none' }}
-                        />
-                    </form>
+                            <input
+                                type="submit"
+                                onSubmit={handleNewTodo}
+                                value="Confirm and Pay"
+                                id="submit"
+                                style={{ display: submitVisible ? 'block' : 'none' }}
+                            />
+                        </form>
+                    </div>
                 </div>
+            </section>
 
-                <footer />
-            </div>
-        </section>
+        </div>
     );
 }
 export default Confirm;

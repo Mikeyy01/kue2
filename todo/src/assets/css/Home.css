@@ -20,88 +20,72 @@
     text-decoration: none !important;
 }
 
-/*position absolute top 50 % left 50% cen*/
-
-
-* {
+.homeContainer {
     font-family: 'ProximaNova', sans-serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
-
-.wrapper {
-    width: 100%;
-}
-
-.blob {
-    background: linear-gradient(56deg, #551448 0%, #000000 50%, #551448 100%);
-    height: 100vh;
-    width: 100vw;
     overflow: hidden;
-    margin: 0;
 }
 
-
-.blob .logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-}
-
-.blob .logo img {
-    width: 50%;
-    margin-top: 15%;
-    max-width: 250px;
-    height: auto;
-}
-
-.blob .X {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 12%;
-    width: 6%;
-    max-width: 100%;
-    margin-top: 5%;
-    height: auto;
-}
-
-.blob .ClubLine {
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-.blob .Club {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 15%;
-    margin-top: 5%;
-}
-
-
-
-.blob .line2 {
-    z-index: 1;
-    position: relative;
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120vh;
     width: 100%;
-    height: 4px;
-    max-height: auto;
-    margin-top: 60px;
-    margin-bottom: 100px;
-    margin-right: 200px;
-    margin-left: 0px;
-    max-width: 2300px;
-    background: rgb(103, 168, 175);
-    background: linear-gradient(90deg, rgba(103, 168, 175, 1) 0%, rgba(234, 2, 120, 1) 50%, rgba(97, 226, 186, 1) 80%);
+    background: linear-gradient(56deg, #551448 0%, #000000 50%, #551448 100%);
+    overflow: hidden;
 }
 
-.blob .text1 {
-    font-size: 4vw;
-    position: relative;
+.home .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    height: 120%;
+    position: absolute;
+}
+
+.home .container header {
+    margin-bottom: 30px;
+    margin-top: 25px;
+    text-align: center;
+}
+  
+.home .container header .logo {
+    width: 14em;  
+}
+
+.home .container header .ClubLine {
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.47) 0%, rgb(220, 20, 122) 50%, rgb(142, 118, 157) 100%) 1 / 1 / 0 stretch;
+    margin-top: 15px;
+    border-bottom: 3px solid transparent;
+}
+
+.home .container header .ClubLine .X {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 1.5em;
+}
+
+.home .container header .ClubLine .Club {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+    margin-bottom: 10px;
+}
+
+.home .homePage {
+    position: absolute;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.homePage h1 {
+    font-family: Proxima Bold;
     text-align: center;
     text-transform: uppercase;
     background: linear-gradient(to right, rgba(103, 168, 175, 1) 0%, rgba(234, 2, 120, 1)60%, rgba(97, 226, 186, 1) 100%);
@@ -109,34 +93,30 @@
     -webkit-text-fill-color: transparent;
     animation: animation 300s linear infinite;
     animation-delay: calc(.1s * var(--i));
+    padding: 0px 15px;
+    font-size: 2em;
+}
 
+.homePage h3 {
+    color: #edebeb;
+    text-align: center;
+    padding: 0 50px;
+    font-size: 1.2em;
+    line-height: 1.5em;
 }
 
 @keyframes animation {
     to {
         background-position: 4500vh;
-
     }
 }
 
-.blob .text2 {
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
-    margin-top: 20px;
-    position: relative;
-    color: white;
-}
-
-
-.blob .search-button {
+.homePage .search-button {
     display: flex;
-    text-align: center;
     justify-content: center;
-    align-content: space-around;
 }
 
-.blob button {
+.homePage button {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -144,63 +124,63 @@
     margin-left: 5%;
     margin-right: 5%;
     font-family: Proxima;
-    font-weight: lighter;
     margin-top: 2rem;
-    background: linear-gradient(135deg, #E084A6 0%, #634DA0 42%, #551448 100%);
-    text-align: center;
+    background: linear-gradient(135deg, #c67191bd 0%, #4e3a86a6 42%, #551448d4 100%);
     text-transform: uppercase;
-    border-radius: 50px;
+    border-radius: 20px;
     border: none;
-    width: 100%;
-    height: 150px;
-    font-size: 20px;
-    line-height: 1.8;
+    width: 35%;
+    height: 180px;
+    font-size: 19px;
     color: white;
     letter-spacing: 0.1em;
     cursor: pointer;
-    line-height: 1;
 }
 
-.blob button img {
+.homePage button img {
     margin-top: 13%;
     vertical-align: top;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
-.blob .search-button:hover {}
+.homePage button:hover {
+    background: linear-gradient(rgb(15, 15, 15), rgb(15, 15, 15)) padding-box padding-box, linear-gradient(135deg, rgb(224, 132, 166) 0%, rgb(99, 77, 160) 42%, rgb(85, 20, 72) 100%) border-box border-box;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+}
 
-@media only screen and (min-width: 456px) {
-    /* styles for screens with a maximum width of 600px go here */
-    .blob .section1 {
-        width: 50%;
-        margin: 0 auto;
+.homePage img.requestImg {
+    margin-left: -15px;
+}
+
+/* Responsiveness*/
+@media (max-width: 768px) {
+    .home .container header .logo {
+        width: 10em;  
     }
-
-}
-
-@media only screen and (min-width: 990px) {
-    /* styles for screens with a maximum width of 600px go here */
-    .blob .section1 {
-        width: 40%;
-        margin: 0 auto;
+    .home .container header .ClubLine .X {
+        width: 1em;
     }
-
-}
-
-@media only screen and (min-width: 1200px) {
-    /* styles for screens with a maximum width of 600px go here */
-    .blob .section1 {
-        width: 30%;
-        margin: 0 auto;
+    .home .container header .ClubLine .Club {
+        width: 5em;
     }
-
-}
-@media only screen and (min-width: 1500px) {
-    /* styles for screens with a maximum width of 600px go here */
-    .blob .section1 {
-        width: 20%;
-        margin: 0 auto;
+    .home .homePage {
+        margin-top: 0px;
     }
-
+    .homePage h1 {
+        font-size: 23px;
+    }
+    .homePage h3 {
+        font-size: 1em;
+    }
+    .homePage button {
+        margin-top: 2rem;
+        height: 130px;
+        font-size: 16px;
+    }
+    .homePage button img {
+        margin-bottom: 10px;
+    }
 }
-

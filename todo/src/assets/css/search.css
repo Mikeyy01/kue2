@@ -1,9 +1,8 @@
-* {
+.searchContainer {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Proxima Nova', sans-serif;
-  overflow-x: hidden;
 }
 
 /* Search Section */
@@ -14,9 +13,8 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   background: linear-gradient(56deg, #551448 0%, #000000 50%, #551448 100%);
-  overflow: hidden;
 }
 
 .search .container {
@@ -67,8 +65,6 @@
   color: rgb(253,253,253, 0.7);
 }
 
-
-
 /* form button */
 .search form button {
   background-color: transparent;
@@ -92,23 +88,14 @@
 }
 
 /* delete icon */
-.btnDelete {
+.search .btnDelete {
   right: 5%;
 }
 
-.btnDelete img {
-  width: 0.2em;
-  height: 0.2em
+.search .btnDelete img {
+  width: 1.2em;
+  height: 1.2em
 }
-
-.search #topTitle {
-  font-size: 1.3rem;
-  color: rgb(253,253,253);
-  font-weight: bold;
-  padding-bottom: 25px;
-  display: none;
-}
-
 
 /* tracks section */
 .songDisplay {
@@ -120,10 +107,7 @@
 
 .songDisplay .tracks {
   width: 100%;
-  align-content: center;
-  justify-items: center;
   overflow: hidden;
-  padding: 10px 7px 0px 40px;
   border-radius: 5px;
 }
 
@@ -131,19 +115,15 @@
   background-color: #212020;
 }
 
-.songDisplay .tracks a {
-  text-decoration: none;
-}
-
 .songDisplay .track-row {
   display: flex;
   flex-wrap: wrap;
   color: white;
-  padding: 2px 5px 6px 5px;
   border-radius: 8px;
   box-sizing: border-box;
   position: relative;
   margin: 0;
+  padding: 15px 0px 0px 15px;
 }
 
 /* song track and artist */
@@ -162,6 +142,8 @@
 .songDisplay .track-info ul {
   list-style: none;
   line-height: 28px;
+  margin-top: -5px;
+  margin-left: -35px;
 }
 
 .songDisplay .track-info li {
@@ -177,7 +159,7 @@
 
 /* song artist */
 .songDisplay .track-info .artist {
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 550;
   color: #9f9c9c;
 }
@@ -205,19 +187,15 @@
   float: right;
   color: #979696;
   font-weight: 550;
-  font-size: 20px;
+  font-size: 15px;
 }
 
-/* Responsiveness*/
 /* Responsiveness*/
 @media (max-width: 625px) {
   .search input {
     font-size: 1.2rem;
-  }
-  .search form input {
     padding: 12px;
     margin-right: -10px;
-    margin-left: 60px;
     width: 80%;
   }
   .songDisplay .track-info {
@@ -225,10 +203,7 @@
   }
   .songDisplay .track-time {
     width: calc(100% - 385px);
-  }
-  .songDisplay .tracks {
-    padding: 10px 7px 0px 20px;
-  }
+  } 
 }
 
 @media (max-width: 535px) {
@@ -240,62 +215,13 @@
     font-size: 15px;
   }
   .search #btnSearch img {
-    width: 1em;
-    height: 1em;
-  }
-  .search #topTitle {
-    font-size: 1.2rem;
-  }
-  .songDisplay .track-info {
-    width: 220px;
-  }
-  .songDisplay .track-time {
-    width: calc(100% - 265px);
-  }
-}
-
-@media (max-width: 768px) {
-  .search form input {
-    padding: 12px;  
-    margin-right: -10px;
-  }
-  .search input {
-    padding: 18px;  
-    margin-left: 60px;
-    width: 80%;
-  }
-}
-
-@media (max-width: 480px) {
-  .search input { 
-    font-size: 0.85rem;
-    margin-left: 38px;
-  }
-  .songDisplay .track-info.title {
-    font-size: 15px;
-  }
-  .search #btnSearch img {
-    width: 1.4em; 
+    width: 1.4em;
     height: 1.4em;
   }
-  .search #btnDelete img {
+  .search .btnDelete img {
     width: 1em; 
     height: 1em;
   }
-}
-
-@media (max-width: 535px) {
-  .search input {
-    font-size: 0.9rem;
-    margin-left: 38px;
-  }
-  .search .songDisplay .track-info.title {
-    font-size: 15px;
-  }
-  .search #btnSearch img {
-    width: 1em;
-    height: 1em;
-  }
   .search #topTitle {
     font-size: 1.2rem;
   }
@@ -306,3 +232,4 @@
     width: calc(100% - 265px);
   }
 }
+

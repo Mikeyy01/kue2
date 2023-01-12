@@ -1,9 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import KueLogo2 from '../assets/images/logo.png'
-import XLogo from '../assets/images/X.svg'
-import ClubLogo from '../assets/images/Club.svg'
-import '../assets/css/list.css';
+import kuelogo from '../assets/images/logo.png'
+import '../assets/css/clientlist.css';
 import {useState, useEffect} from "react";
 import axios from "axios";
 const { REACT_APP_BACKEND_URL } = process.env
@@ -34,61 +32,47 @@ const ClientQueue = () => {
         navigate("/");
     }
 
-    return <div>
-        <div className="blob">
-            <div className='containerBody'>
-            <div className='todoBody'>
-            <section className="section1">
-                <div className="wrapper">
-                    <label className="logo2">
+    return (
+        <div className='paymentContainer'>
+            <section className="payment">
+                <div className="container">
+                    <header>
                         <a onClick={returnHome} href="/">
-                            <img className="logo" src={KueLogo2} height="" alt="Logo"/>
+                            <img src={kuelogo} alt="logo" />
                         </a>
-                    </label>
-                </div>
-                <div className="ClubLine">
-                    <img className="X" src={XLogo} width="2%" height="auto" alt="X"/>
-                    <img className="Club" src={ClubLogo} width="2%" height="auto" alt="Club"/>
-                </div>
-            </section>
+                    </header>
+                    
+                    <div className='confirmation'>
+                        <p className="queueTitle">Queue List</p>
 
-
-            <section className="homepage-buttons">
-                <div className="outline">
-                    <div className="line1"></div>
-                    <div className="line2"></div>
-                </div>
-                <div className="text2">
-                    <h1>
-                        Current Queue
-                    </h1>
-                </div>
-                <main>
-                    {todos
-                        .filter(todo => todo.status === "Approved")
-                        .map((todo) =>
-                            (
-                                <div key={todo.id} className="todo" style={{ display: "flex", margin: "20px" , justifyContent : 'center' , alignItems: 'center'}}>
-                                    <img className="albumCover" src={todo.todo.coverArtURL} alt="cover art"  />
-                                    <p className="songName">
-                                        {todo.todo.track}
-                                    </p>
-                                    <h3 className="artistName">
-                                        {todo.todo.artist}
-                                    </h3>
-                                    <p className="timeStamp">
-                                        {todo.timestamp}
-                                    </p>
-
+                        <div class="songDisplay">
+                            
+                            {todos
+                                .filter(todo => todo.status === "Approved")
+                                .map((todo) =>
+                                <div className='trackss'>
+                                    <div key={todo.id}>
+                                        <div className="trackRow">
+                                            <img className="albumCover" src={todo.todo.coverArtURL} alt="cover art" style={{width: "45px",
+                                            height: "45px"}} />
+                                            
+                                            <div className="trackInfo">
+                                                <ul className="info">
+                                                    <li className="title" id="trackName">{todo.todo.track}</li>
+                                                    <li className="artist">{todo.todo.artist}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            ))}
-                </main>
+                            )}
+
+                        </div>
+                    </div>
+                </div>
             </section>
-            <footer></footer>
-    </div>
-            </div>
         </div>
-    </div>
+    );
 };
 
 export default ClientQueue;

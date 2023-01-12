@@ -1,9 +1,10 @@
 import '../assets/css/list.css';
+import '../assets/css/clientlist.css';
 import {useState, useEffect} from "react";
 import axios from "axios";
 import acceptBtn from '../assets/images/accept.png'
 import declineBtn from '../assets/images/decline.png'
-import logoHeader from '../assets/images/logo.png'
+import kuelogo from '../assets/images/logo.png'
 const { REACT_APP_BACKEND_URL } = process.env
 
 const TodoList = () => {
@@ -92,59 +93,68 @@ const toggleComplete = todo => {
     }
 
 
-    return <div>
-        <div className='containerBody'>
+    return (
+        <div className='paymentContainer'>
+            <section className="paymentt">
+                <div className="container">
+                    <header>
+                        <a href="/list">
+                            <img src={kuelogo} alt="logo" />
+                        </a>
+                    </header>
+                    
+                    <div className='confirmation'>
+                        <p className="queueTitle">Requests Management</p>
 
-            <div className='todoBody'>
-                <header className='headerLogo'>
-                    <img className= "logoHdr" src={logoHeader} width ="30%" height="30%" />
-                    <h2>Welcome DJ&nbsp;</h2>
-                    <h2 id="djcode"></h2>
-
-                </header>
-                <h1>Request List</h1>
-                <div className='dropDown'>
-                    <h3>Filter Queue:   </h3>
-                    <select className='drpDwn' value={selectedStatus} onChange={handleStatusChange}>
-                        <option  value="" selected >All</option>
-                        <option value="requested" >Requested</option>
-                        <option value="Approved" >Accepted</option>
-                    </select>
-
-                </div>
-
-                {todos.filter(todo => {
-                    if (selectedStatus === 'requested') {
-                        return todo.status === 'requested';
-                    } else if (selectedStatus === 'Approved') {
-                        return todo.status === 'Approved';
-                    } else {
-                        return true;
-                    }
-                }).map((todo) =>
-                        <div key={todo.id} className="todo" style={{ display: "flex", margin: "20px" , justifyContent : 'center' , alignItems: 'center', background: todo.completed ? "#D3D3D3" : "" }}>
-                            <img className="albumCover" src={todo.todo.coverArtURL} alt="cover art"  />
-                            <p className="songName">
-                                {todo.todo.track}
-                            </p>
-                            <h3 className="artistName">
-                                {todo.todo.artist}
-                            </h3>
-                            <p className="timeStamp">
-                                {todo.timestamp}
-                            </p>
-
-                            <button onClick={() => toggleComplete(todo)} className="accept-button"> <img className= "aBtn" src={acceptBtn}  mix-blend-mode ="multiply" width ="25%" height="25%" /></button>
-                            <button onClick={() => handleDelete(todo)} className="delete-button"><img className= "dBtn" src={declineBtn}  width ="25%" height="25%" /></button>
+                        <div className='selectFilter'>
+                            <h3>Filter:</h3>
+                            <select className='drpDwn' value={selectedStatus} onChange={handleStatusChange}>
+                                <option  value="" selected >All</option>
+                                <option value="requested" >Requested</option>
+                                <option value="Approved" >Accepted</option>
+                            </select>
                         </div>
-                    )}
 
-            </div>
+                        <div class="songDisplay">
+                            {todos.filter(todo => {
+                                if (selectedStatus === 'requested') {
+                                    return todo.status === 'requested';
+                                } else if (selectedStatus === 'Approved') {
+                                    return todo.status === 'Approved';
+                                } else {
+                                    return true;
+                                }
+                            }).map((todo) =>
+                                <div className='tracks'>
+                                    <div key={todo.id} style={{ background: todo.completed ? "rgb(56 56 56)" : "" }}>
+                                        <div className="trackRow">
+                                            <img className="albumCover" src={todo.todo.coverArtURL} alt="cover art" style={{width: "45px",
+                                            height: "45px"}} />
+                                            
+                                            <div className="trackInfo">
+                                                <ul className="info">
+                                                    <li className="title" id="trackName">{todo.todo.track}</li>
+                                                    <li className="artist">{todo.todo.artist}</li>
+                                                </ul>
+                                            </div>
 
+                                            <div className="track-time">
+                                                <p className="time">{todo.timestamp}</p>
+                                            </div>
+                                            <div className='btnRequests'>
+                                                <button onClick={() => toggleComplete(todo)} className="accept-button"> <img className= "aBtn" src={acceptBtn}  mix-blend-mode ="multiply" width ="25%" height="25%" alt={""} /></button>
+                                                <button onClick={() => handleDelete(todo)} className="delete-button" style={{ background: todo.completed ? "rgb(56, 56, 56)" : "#b94142" }}><img className= "dBtn" src={declineBtn} alt={""} width ="25%" height="25%" /></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-
-    </div>
-
+    );
 };
 
 

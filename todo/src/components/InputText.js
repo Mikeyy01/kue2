@@ -8,7 +8,6 @@ import searchIcon from '../assets/images/search-icon.png';
 import kue2 from '../assets/images/logo2.png';
 import { useNavigate } from 'react-router-dom';
 
-
 const { REACT_APP_BACKEND_URL } = process.env;
 
 //spotify search bar functions
@@ -102,20 +101,30 @@ const InputText = () => {
         navigate("/");
     }
 
+
+//Prevent EnterKey bug
+    const enterKey = (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+        }
+    }
+
     return (
-                <section className="search">
-            <div className="container">
-                <header>
-                    <a onClick={returnHome} href="/">
-                        <img src={kue2} alt="logo" />
-                    </a>
-                </header>
-                <div className="songDisplay">
+        <div className='searchContainer'>
+            <section className="search">
+                <div className="container">
+                    <header>
+                        <a onClick={returnHome} href="/">
+                            <img src={kue2} alt="logo" />
+                        </a>
+                    </header>
+
                     <form id="searchForm" autoComplete="off" onSubmit={spotifySearch}>
                         <button id="btnSearch">
                             <img src={searchIcon}  alt="search icon" />
                         </button>
                         <input
+                            onKeyDown={enterKey}
                             type="text"
                             name="searchInput"
                             id="input"
@@ -124,40 +133,39 @@ const InputText = () => {
                             placeholder="What song would you like to request?"
                         />
                         {inputValue ? (
-                            <img src={deleteIcon} style={{width: '15px'}} alt="Delete icon" onClick={ClearInput}/>
+                            <button className='btnDelete'><img src={deleteIcon} alt="Delete icon" className="btnDelete" onClick={ClearInput}/></button>
                         ) : null}
-                        <button
-                            type="submit"
-                            className="btnDelete"
-                            >
-                        </button>
                     </form>
-                    {tracks.map((track) => (
-                        <div onClick={() => TrackSelect(track.artists[0].name, track.name, track.album.images[2].url)}>
-                        <div key={track.id} className="tracks">
-                            <div id={track.id}>
-                                <div className="track-row">
-                                    <img src={track.album.images[2].url} alt="cover art" />
-                                    <div className="track-info">
-                                        <ul className="info" onClick={TrackSelect}>
-                                            <li className="title" id="trackName">{track.name}</li>
-                                            <li className="artist">{track.artists[0].name}</li>
-                                        </ul>
+
+                    <div className="songDisplay">
+                        {tracks.map((track) => (
+                            <div className="tracks">
+                                <div key={track.id} onClick={() => TrackSelect(track.artists[0].name, track.name, track.album.images[2].url)}>
+                                    
+                                    <div className="track-row">
+                                        <img src={track.album.images[2].url} alt="cover art"/>
+                                        
+                                        <div className="track-info">
+                                            <ul className="info">
+                                                <li className="title" id="trackName">{track.name}</li>
+                                                <li className="artist">{track.artists[0].name}</li>
+                                            </ul>
+                                        
+                                        </div>
+                                        
+                                        <div className="track-time">
+                                            <p className="time">{msToMinutesAndSeconds(track.duration_ms)}</p>
+                                        </div>
                                     </div>
-                                    <div className="track-time">
-                                        <p className="time">{msToMinutesAndSeconds(track.duration_ms)}</p>
-                                    </div>
+                                
                                 </div>
                             </div>
-                        </div>
-                        </div>
-                    ))}
-                    <div className="songDisplay"></div>
-
+                        ))}
+                    </div>
                     <footer></footer>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 }
 export default InputText;
