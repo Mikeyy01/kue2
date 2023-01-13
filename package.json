@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "concurrently \"json-server db.json --host 3.75.158.163 --port 3000\" \"set PORT=3001 && react-scripts start\"",
+    "start": "concurrently \"server.js\" \"set PORT=3001 && react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
