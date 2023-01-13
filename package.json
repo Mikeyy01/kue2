@@ -1,6 +1,6 @@
 {
-  "name": "todo",
-  "version": "0.1.0",
+  "name": "kue",
+  "version": "v1.0",
   "private": true,
   "workspaces": [
     "db",
@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "concurrently \"json-server --watch db.json\" \"set PORT=3001 && react-scripts start\"",
+    "start": "concurrently \"node server.js\" \"set PORT=3001 && react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
