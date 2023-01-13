@@ -1,7 +1,8 @@
 {
-  "name": "kue",
-  "version": "v1.0",
+  "name": "todo",
+  "version": "0.1.0",
   "private": true,
+  "engines": { "node": "16.13.1" },
   "workspaces": [
     "db",
     "todo"
