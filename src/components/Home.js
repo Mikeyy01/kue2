@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/css/Home.css';
-import requestIcon from '../assets/images/reqSong-01-01.png';
-import queueIcon from '../assets/images/queueList-01.png';
+import requestIcon from '../assets/images/reqSong01.svg';
+import queueIcon from '../assets/images/Queue.svg';
 import KueLogo from '../assets/images/logo.png'
 import XLogo from '../assets/images/X.svg'
 import ClubLogo from '../assets/images/Club.svg'

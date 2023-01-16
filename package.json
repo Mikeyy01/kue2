@@ -1,6 +1,6 @@
 {
-  "name": "todo",
-  "version": "0.1.0",
+  "name": "kue",
+  "version": "V1.0",
   "private": true,
   "engines": { "node": "16.13.1" },
   "workspaces": [
